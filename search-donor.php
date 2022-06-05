@@ -16,7 +16,9 @@ include('includes/config.php');
 
     <title>Blood Berry | Search  A Donar</title>
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+ <!-- Custom fonts for this template 
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+-->
     <link href="css/modern-business.css" rel="stylesheet">
     <style>
     .navbar-toggler {
