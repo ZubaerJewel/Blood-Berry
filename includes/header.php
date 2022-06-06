@@ -28,24 +28,25 @@
                 <ul class="navbar-nav ml-auto">
                    
                     <li class="nav-item">
-                        <a class="nav-link" href="page.php?type=donor">Why Become Donor</a>
+                        <a class="nav-link" href="page.php?type=donor">Tips</a>
                     </li>
 					<li class="nav-item">
-                        <a class="nav-link" href="search-donor.php">Search Blood</a>
+                        <a class="nav-link" href="search-donor.php">Search</a>
                     </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="contact.php">Contact us</a>
+                    
+					<li class="nav-item">
+                        <a class="nav-link" href="become-donar.php">Registration</a>
+                 
+                    </li>
+					  <li class="nav-item">
+                        <a class="nav-link" href="contact.php">Contact</a>
                     </li>
 					 <li class="nav-item">
 					
                         <a class="nav-link" href="page.php?type=aboutus">About</a>
                     </li>
 					<li class="nav-item">
-                        <a class="nav-link" href="become-donar.php">Donar Registration</a>
-                 
-                    </li>
-					<li class="nav-item">
-                        <a class="nav-link" href="admin/index.php">Admin Log In</a>
+                        <a class="nav-link" href="admin/index.php">Admin</a>
                  
                     </li>
                  
