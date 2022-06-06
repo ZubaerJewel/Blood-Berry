@@ -88,7 +88,7 @@ $regbd=$query1->rowCount();
 													<div class="stat-panel-title text-uppercase">Registered Member</div>
 												</div>
 											</div>
-											<a href="donor-list.php" class="block-anchor panel-footer text-center">Member Lsit Details &nbsp; <i class="fa fa-arrow-right "></i></a>
+											<a href="donor-list.php" class="block-anchor panel-footer text-center">Donor Member Lsit &nbsp; <i class="fa fa-arrow-right "></i></a>
 										</div>
 									</div>
 									<div class="col-md-3">

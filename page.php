@@ -14,7 +14,7 @@ include('includes/config.php');
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Blood Berry - Start Bootstrap Template</title>
+    <title>Blood Berry - Tips</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -64,7 +64,7 @@ foreach($results as $result)
             <li class="breadcrumb-item">
                 <a href="index.php">Home</a>
             </li>
-            <li class="breadcrumb-item active"><?php   echo htmlentities($result->PageName); ?></li>
+            <li class="breadcrumb-item active">Tips</li>
         </ol>
 
         <p><?php  echo $result->detail; ?> </p>

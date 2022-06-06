@@ -11,37 +11,32 @@ else{
 if(isset($_POST['submit']))
   {
 $fullname=$_POST['fullname'];
+$oname = $_POST['oname']; 
 $mobile=$_POST['mobileno'];
-//profile picture  start
-			$profile = $_FILES["profile_pic"]; 
-			$profile_name = $profile['name'];
-			$profile_tmp_name = $profile['tmp_name'];
 			
-			$location = "images/";
-			move_uploaded_file($profile_tmp_name,$location.$profile_name);
-			
-			//profile picture  end
 $email=$_POST['emailid'];
 $age=$_POST['age'];
 $gender=$_POST['gender'];
+
 $blodgroup=$_POST['bloodgroup'];
 $address=$_POST['address'];
 $message=$_POST['message'];
-$status=1;
-			$sql="INSERT INTO  tblblooddonars(FullName,MobileNumber,Profile,EmailId,Password,Age,Gender,BloodGroup,Address,Message,status) 
-			VALUES(:fullname,:mobile,:profile_name,:email,:password,:age,:gender,:blodgroup,:address,:message,:status)";
+
+			$sql="INSERT INTO  tbl_agent(FullName,OrganizationName,MobileNumber,EmailId,Age,Gender,BloodGroup,Address,Message) 
+			VALUES(:fullname,:oname,:mobile,:email,:age,:gender,:blodgroup,:address,:message)";
 			$query = $dbh->prepare($sql);
 			$query->bindParam(':fullname',$fullname,PDO::PARAM_STR);
+				$query->bindParam(':oname',$oname,PDO::PARAM_STR);
 			$query->bindParam(':mobile',$mobile,PDO::PARAM_STR);
-			$query->bindParam(':profile_name',$profile_name,PDO::PARAM_STR);
+		
+			
 			$query->bindParam(':email',$email,PDO::PARAM_STR);
-			$query->bindParam(':password',$password,PDO::PARAM_STR);
-			$query->bindParam(':age',$age,PDO::PARAM_STR);
+			$query->bindParam(':age',$age,PDO::PARAM_STR);			
 			$query->bindParam(':gender',$gender,PDO::PARAM_STR);
+			
 			$query->bindParam(':blodgroup',$blodgroup,PDO::PARAM_STR);
 			$query->bindParam(':address',$address,PDO::PARAM_STR);
 			$query->bindParam(':message',$message,PDO::PARAM_STR);
-			$query->bindParam(':status',$status,PDO::PARAM_STR);
 			$query->execute();
 			$lastInsertId = $dbh->lastInsertId();
 			if($lastInsertId)
@@ -74,7 +69,7 @@ $status=1;
 	<meta name="author" content="">
 	<meta name="theme-color" content="#3e454c">
 	
-	<title>Blood Berry| Admin Add Donor</title>
+	<title>Blood Berry| Admin Add Agent</title>
 
 	<!-- Font awesome -->
 	<link rel="stylesheet" href="css/font-awesome.min.css">
@@ -134,7 +129,7 @@ function isNumberKey(evt)
 				<div class="row">
 					<div class="col-md-12">
 					
-						<h2 class="page-title">Add Donor</h2>
+						<h2 class="page-title">Add Agent</h2>
 
 						<div class="row">
 							<div class="col-md-12">
@@ -146,16 +141,17 @@ function isNumberKey(evt)
 									<div class="panel-body">
 <form method="post" class="form-horizontal" enctype="multipart/form-data">
 
-			<div class="row">
+		
+							<div class="row">
 								<div class="col-lg-4 mb-4">
-									<div class="font-italic">Full Name:  <span style="color:red">*</span></div>
+									<div class="font-italic">Enter Name:  <span style="color:red">*</span></div>
 									<div><input type="text" name="fullname" class="form-control" required></div>
 								</div>
 								
 
 								<div class="col-lg-4 mb-4">
-									<div class="font-italic">Profile Picture</div>
-									<div><input type="file"  name="profile_pic"></div>
+									<div class="font-italic">Organization Name:  <span style="color:red">*</span></div>
+									<div><input type="text" name="oname" class="form-control" required></div>
 								</div> 
 								<div class="col-lg-4 mb-4">
 										<div class="font-italic">Gender: <span style="color:red">*</span></div>
@@ -173,11 +169,11 @@ function isNumberKey(evt)
 
 							
 								<div class="col-lg-4 mb-4">
-									<div class="font-italic">Mobile Number:  <span style="color:red">*</span></div>
+									<div class="font-italic">Org. Mobile Number:  <span style="color:red">*</span></div>
 									<div><input type="text" name="mobileno" class="form-control" required></div>
 								</div>
 								<div class="col-lg-4 mb-4">
-									<div class="font-italic">Email Id: </div>
+									<div class="font-italic">Org. Email Id: </div>
 									<div><input type="email" name="emailid" class="form-control"></div>
 								</div>
 								<div class="col-lg-4 mb-4">
@@ -216,7 +212,7 @@ function isNumberKey(evt)
 								</div>
 
 								<div class="col-lg-4 mb-4">
-									<div class="font-italic">About Yourself:</div>
+									<div class="font-italic">About Your Organization Details:</div>
 									<div><textarea class="form-control" name="message" > </textarea></div>
 									
 								</div>
@@ -230,6 +226,7 @@ function isNumberKey(evt)
 
 
 </div>
+
 
 
 
