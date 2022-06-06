@@ -44,8 +44,8 @@ include('includes/config.php');
 <?php include('includes/slider.php');?>
    
     <!-- Page Content -->
-    <div class="container">
-		<div class="alert alert-info my-4 text-center text-uppercase alert-dismissible">
+    <div class="">
+		<div class="container alert alert-info my-4 text-center text-uppercase alert-dismissible">
 			<button type="button" class="close" data-dismiss="alert">&times;</button>
 				<strong>Welcome!</strong> To Blood Berry.
 		</div>
@@ -53,7 +53,7 @@ include('includes/config.php');
 	
         <!-- Marketing Icons Section -->
 		
-        <div class="row my-5">
+        <div class="container-fluid row my-5">
             <div class="col-lg-4 mb-4">
                 <div class="card">
 						<button type="button" class="btn btn-outline-danger  card-header">The Need For Blood!</button>
@@ -86,12 +86,13 @@ include('includes/config.php');
         <!-- /.row -->
 
         <!-- Portfolio Section -->
-        <h2>Some of the available donar</h2>
-
-        <div class="row">
+		<div class=" card pb-4">
+			<button type="button container" class="btn btn-outline-danger  card-header">Some Of The Available Donar</button>
+		  </div>
+        <div class=" row">
                    <?php 
 $status=1;
-$sql = "SELECT * from tblblooddonars where status=:status order by rand() limit 5";
+$sql = "SELECT * from tblblooddonars where status=:status order by rand() limit 8";
 $query = $dbh -> prepare($sql);
 $query->bindParam(':status',$status,PDO::PARAM_STR);
 $query->execute();
@@ -102,9 +103,9 @@ if($query->rowCount() > 0)
 	foreach($results as $result)
 		{ ?>
 
-					<div class="col-lg-4 col-sm-6 portfolio-item">
-						<div class="card h-100">
-							<a href="#"><img class="card-img-top img-fluid rounded-circle style="width:50px height:60px" src="images/<?php echo htmlentities($result->Profile);?>" alt="" ></a>
+					<div class="col-lg-3 col-sm-6 portfolio-item">
+						<div class="card h-50">
+							<a href="#"><img class="card-img-top img-fluid  rounded-circle"  width="160" height="80" src="images/<?php echo htmlentities($result->Profile);?>" alt="" ></a>
 							<div class="card-block">
 								<h4 class="card-title"><a href="#"><?php echo htmlentities($result->FullName);?></a></h4>
 										<p class="card-text"><b>Email Address :</b> <?php echo htmlentities($result->EmailId);?></p>
@@ -128,21 +129,21 @@ if($query->rowCount() > 0)
 
         <!-- Features Section -->
         <div class="row">
-            <div class="col-lg-6">
-                <h2>BLOOD GROUPS</h2>
+            <div class="col-lg-8">
+              <div class=" card pb-4">
+			<button type="button container" class="btn btn-outline-danger  card-header">About Blood Group</button>
+		  </div>
           <p>  blood group of any human being will mainly fall in any one of the following groups.</p>
-                <ul>
-                
-                
-<li>A positive or A negative</li>
-<li>B positive or B negative</li>
-<li>O positive or O negative</li>
-<li>AB positive or AB negative.</li>
+                <ul>               
+					<li>A positive or A negative</li>
+					<li>B positive or B negative</li>
+					<li>O positive or O negative</li>
+					<li>AB positive or AB negative.</li>
                 </ul>
                 <p>A healthy diet helps ensure a successful blood donation, and also makes you feel better! Check out the following recommended foods to eat prior to your donation.</p>
             </div>
-            <div class="col-lg-6">
-                <img class="img-fluid rounded" src="images/blood-donor (1).jpg" alt="">
+            <div class="col-lg-4">
+                <img class="img-fluid rounded" src="images/banner3.png" alt="">
             </div>
         </div>
         <!-- /.row -->
@@ -152,14 +153,19 @@ if($query->rowCount() > 0)
         <!-- Call to Action Section -->
         <div class="row mb-4">
             <div class="col-md-8">
-            <h4>UNIVERSAL DONORS AND RECIPIENTS</h4>
+			<div class=" card pb-4">
+			<button type="button container" class="btn btn-outline-danger  card-header">UNIVERSAL DONORS AND RECIPIENTS</button>
+		  </div>
+           
                 <p>
-The most common blood type is O, followed by type A.
+					The most common blood type is O, followed by type A.
 
-Type O individuals are often called "universal donors" since their blood can be transfused into persons with any blood type. Those with type AB blood are called "universal recipients" because they can receive blood of any type.</p>
+					Type O individuals are often called "universal donors" since their blood can be transfused into persons with any blood type. 
+					Those with type AB blood are called "universal recipients" because they can receive blood of any type.
+				</p>
             </div>
-            <div class="col-md-4">
-                <a class="btn btn-lg btn-secondary btn-block" href="become-donar.php">Become a Donar</a>
+            <div class="col-md-4  card pb-3">
+               <button type="button container" class="btn bg-danger   style="text-size:12rem" card-header"><a class="text-white" href="become-donar.php">Become A Donor</a></button> 
             </div>
         </div>
 

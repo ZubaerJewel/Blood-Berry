@@ -13,11 +13,11 @@
  
 
   
-<nav class="navbar fixed-top navbar-toggleable-md navbar-inverse bg-danger">
+<nav class="navbar fixed-top navbar-toggleable-md py-3 navbar-inverse bg-danger">
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarExample" aria-controls="navbarExample" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>   
-				<a class="logo"  href = "index.php"><img src ="images/blood_berry1.PNG"></a> <!--Logo Design-->
+				<a class="logo"  href = "index.php"><img height= width="460" height="345"src ="images/blood_berry1.PNG"></a> <!--Logo Design-->
 			<div class="container-fluid  ">
 				
 			
