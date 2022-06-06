@@ -6,52 +6,42 @@ include('includes/config.php');
 if(isset($_POST['submit']))
   {
 			$fullname=$_POST['fullname'];
+			$oname = $_POST['oname']; 
 			$mobile=$_POST['mobileno'];
-			//profile picture  start
-			$profile = $_FILES["profile_pic"]; 
-			$profile_name = $profile['name'];
-			$profile_tmp_name = $profile['tmp_name'];
-			
-			$location = "images/";
-			move_uploaded_file($profile_tmp_name,$location.$profile_name);
-			
-			//profile picture  end
 			$email=$_POST['emailid'];
-			$password=$_POST['password'];
 			$age=$_POST['age'];
 			$gender=$_POST['gender'];
 			$blodgroup=$_POST['bloodgroup'];
 			$address=$_POST['address'];
 			$message=$_POST['message'];
-			$status=1;
-			$sql="INSERT INTO  tblblooddonars(FullName,MobileNumber,Profile,EmailId,Password,Age,Gender,BloodGroup,Address,Message,status) 
-			VALUES(:fullname,:mobile,:profile_name,:email,:password,:age,:gender,:blodgroup,:address,:message,:status)";
+			
+			$sql="INSERT INTO  tbl_agent(FullName,OrganizationName,MobileNumber,EmailId,Age,Gender,BloodGroup,Address,Message) 
+			VALUES(:fullname,:oname,:mobile,:email,:age,:gender,:blodgroup,:address,:message)";
 			$query = $dbh->prepare($sql);
 			$query->bindParam(':fullname',$fullname,PDO::PARAM_STR);
+			$query->bindParam(':oname',$oname,PDO::PARAM_STR);
 			$query->bindParam(':mobile',$mobile,PDO::PARAM_STR);
-			$query->bindParam(':profile_name',$profile_name,PDO::PARAM_STR);
+			
 			$query->bindParam(':email',$email,PDO::PARAM_STR);
-			$query->bindParam(':password',$password,PDO::PARAM_STR);
 			$query->bindParam(':age',$age,PDO::PARAM_STR);
 			$query->bindParam(':gender',$gender,PDO::PARAM_STR);
 			$query->bindParam(':blodgroup',$blodgroup,PDO::PARAM_STR);
 			$query->bindParam(':address',$address,PDO::PARAM_STR);
 			$query->bindParam(':message',$message,PDO::PARAM_STR);
-			$query->bindParam(':status',$status,PDO::PARAM_STR);
 			$query->execute();
 			$lastInsertId = $dbh->lastInsertId();
 			if($lastInsertId)
 			{
 				$msg="Your info submitted successfully";
 				?>
-					<script>alert("Your Data Submitted Successfully !");</script>
+				<script>alert("Your Data Submitted Successfully !");</script>
 				<?php
 			}
 			else 
 			{
 				$error="Something went wrong. Please try again";
 				?>
-					<script>alert("Something went wrong. Please try again!");</script>
+				<script>alert("Something went wrong. Please try again");</script>
 				<?php
 			}
 
@@ -68,7 +58,7 @@ if(isset($_POST['submit']))
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Blood  Berry | Donar Registration</title>
+    <title>Blood  Berry | Agent Registration</title>
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/modern-business.css" rel="stylesheet">
         <style>
@@ -101,28 +91,43 @@ if(isset($_POST['submit']))
     <div class="container">
 
         <!-- Page Heading/Breadcrumbs -->
-        <h1 class="mt-4 mb-3 text-info">Become A <small>Donor</small></h1>
+        <h1 class="mt-4 mb-3 text-info">Become An <strong>Agent</strong></h1>
 
         <ol class="breadcrumb">
             <li class="breadcrumb-item">
                 <a href="index.php">Home</a>
             </li>
-            <li class="breadcrumb-item active">Become a Donor</li>
+            <li class="breadcrumb-item active">Become An Agent</li>
         </ol>
-            <?php if($error){?><div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php } 
-        else if($msg){?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>
+            <?php 
+				if($error)
+				{
+					?>
+					<div class="errorWrap"><strong>ERROR</strong>:
+						<?php echo htmlentities($error); ?>
+					</div>
+					<?php 
+				} 
+				else if($msg)
+				{
+					?>
+					<div class="succWrap"><strong>SUCCESS</strong>:
+						<?php echo htmlentities($msg); ?>
+					</div>
+					<?php 
+				}   ?>
         <!-- Content Row -->
-       <form name="donar" method="post"  enctype="multipart/form-data">
+       <form name="agent" method="post"">
 							<div class="row">
 								<div class="col-lg-4 mb-4">
-									<div class="font-italic">Full Name:  <span style="color:red">*</span></div>
+									<div class="font-italic">Enter Name:  <span style="color:red">*</span></div>
 									<div><input type="text" name="fullname" class="form-control" required></div>
 								</div>
 								
 
 								<div class="col-lg-4 mb-4">
-									<div class="font-italic">Profile Picture</div>
-									<div><input type="file"  name="profile_pic"></div>
+									<div class="font-italic">Organization Name:  <span style="color:red">*</span></div>
+									<div><input type="text" name="oname" class="form-control" required></div>
 								</div> 
 								<div class="col-lg-4 mb-4">
 										<div class="font-italic">Gender: <span style="color:red">*</span></div>
@@ -140,11 +145,11 @@ if(isset($_POST['submit']))
 
 							
 								<div class="col-lg-4 mb-4">
-									<div class="font-italic">Mobile Number:  <span style="color:red">*</span></div>
+									<div class="font-italic">Org. Mobile Number:  <span style="color:red">*</span></div>
 									<div><input type="text" name="mobileno" class="form-control" required></div>
 								</div>
 								<div class="col-lg-4 mb-4">
-									<div class="font-italic">Email Id: </div>
+									<div class="font-italic">Org. Email Id: </div>
 									<div><input type="email" name="emailid" class="form-control"></div>
 								</div>
 								<div class="col-lg-4 mb-4">
@@ -183,7 +188,7 @@ if(isset($_POST['submit']))
 								</div>
 
 								<div class="col-lg-4 mb-4">
-									<div class="font-italic">About Yourself:</div>
+									<div class="font-italic">About Your Organization Details:</div>
 									<div><textarea class="form-control" name="message" > </textarea></div>
 									
 								</div>

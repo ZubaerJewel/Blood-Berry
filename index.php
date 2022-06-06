@@ -14,9 +14,7 @@ include('includes/config.php');
     <meta name="author" content="">
 
     <title>Blood Berry</title>
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> <!-- Custom fonts for this template 
-    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
--->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> 
     <link href="css/modern-business.css" rel="stylesheet">
     <style>
     .navbar-toggler {
@@ -130,17 +128,17 @@ if($query->rowCount() > 0)
         <!-- Features Section -->
         <div class="row">
             <div class="col-lg-8">
-              <div class=" card pb-4">
+              <div class=" card ">
 			<button type="button container" class="btn btn-outline-danger  card-header">About Blood Group</button>
 		  </div>
-          <p>  blood group of any human being will mainly fall in any one of the following groups.</p>
+          <p class="pt-3">  blood group of any human being will mainly fall in any one of the following groups.</p>
                 <ul>               
 					<li>A positive or A negative</li>
 					<li>B positive or B negative</li>
 					<li>O positive or O negative</li>
 					<li>AB positive or AB negative.</li>
                 </ul>
-                <p>A healthy diet helps ensure a successful blood donation, and also makes you feel better! Check out the following recommended foods to eat prior to your donation.</p>
+                <p class="pb-3">A healthy diet helps ensure a successful blood donation, and also makes you feel better! Check out the following recommended foods to eat prior to your donation.</p>
             </div>
             <div class="col-lg-4">
                 <img class="img-fluid rounded" src="images/banner3.png" alt="">
@@ -151,25 +149,24 @@ if($query->rowCount() > 0)
         <hr>
 
         <!-- Call to Action Section -->
-        <div class="row mb-4">
-            <div class="col-md-8">
-			<div class=" card pb-4">
-			<button type="button container" class="btn btn-outline-danger  card-header">UNIVERSAL DONORS AND RECIPIENTS</button>
-		  </div>
+        <div class="row pb-5">
+            <div class="col-md-8 ">
+						<div class=" card">
+								<button type="button container" class="btn btn-outline-danger  card-header">UNIVERSAL DONORS AND RECIPIENTS</button>
+						</div>
            
-                <p>
+                <p class="pt-3 ">
 					The most common blood type is O, followed by type A.
 
 					Type O individuals are often called "universal donors" since their blood can be transfused into persons with any blood type. 
 					Those with type AB blood are called "universal recipients" because they can receive blood of any type.
 				</p>
             </div>
-            <div class="col-md-4  card pb-3">
-               <button type="button container" class="btn bg-danger   style="text-size:12rem" card-header"><a class="text-white" href="become-donar.php">Become A Donor</a></button> 
+            <div class="col-md-4  card">
+              <a class=" btn bg-danger text-white " href="become-donar.php">Become A Donor</a>
             </div>
         </div>
 
-    </div>
     <!-- /.container -->
 
     <!-- Footer -->

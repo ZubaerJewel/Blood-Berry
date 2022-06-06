@@ -14,7 +14,7 @@ include('includes/config.php');
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Blood Berry | Search  A Donar</title>
+    <title>Blood Berry | Search Donar</title>
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
  <!-- Custom fonts for this template 
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -81,8 +81,9 @@ include('includes/config.php');
 
 
 <div class="col-lg-4 mb-4">
-<div class="font-italic">Blood Group<span style="color:red">*</span> </div>
+<div class="font-italic">Select Blood Group: <span style="color:red">*</span> </div>
 <div><select name="bloodgroup" class="form-control" required>
+<option>Select</option>		
 <?php $sql = "SELECT * from  tblbloodgroup ";
 $query = $dbh -> prepare($sql);
 $query->execute();
@@ -90,8 +91,13 @@ $results=$query->fetchAll(PDO::FETCH_OBJ);
 $cnt=1;
 if($query->rowCount() > 0)
 	{
+		?>
+		
+		
+	<?php
 		foreach($results as $result)
-		{               ?>  
+		{               ?> 
+
 			<option value="<?php echo htmlentities($result->BloodGroup);?>"><?php echo htmlentities($result->BloodGroup);?></option>
 			<?php }
 		} ?>
@@ -101,7 +107,7 @@ if($query->rowCount() > 0)
 
 
 <div class="col-lg-4 mb-4">
-<div class="font-italic">Location </div>
+<div class="font-italic">Enter City: </div>
 <div><textarea class="form-control" name="location"></textarea></div>
 </div>
 
@@ -137,7 +143,7 @@ foreach($results as $result)
 
             <div class="col-lg-4 col-sm-6 portfolio-item">
                 <div class="card h-100">
-                    <a href="#"><img class="card-img-top img-fluid" src="images/<?php echo htmlentities($result->Profile);?>" alt="" ></a>
+                    <a href="#"><img class="card-img-top img-fluid rounded-circle"  width="160" height="80"" src="images/<?php echo htmlentities($result->Profile);?>" alt="" ></a>
                     <div class="card-block">
                         <h4 class="card-title"><a href="#"><?php echo htmlentities($result->FullName);?></a></h4>
                         <p class="card-text"><b>Mobile No. / Email Id :</b> <?php echo htmlentities($result->MobileNumber);?> /

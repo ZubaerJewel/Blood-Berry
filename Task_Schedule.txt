@@ -1,0 +1,14 @@
+Date: 6 June 2022          [Remark]
+
+1.user Dashboard ,header,Footer Design  [Completed]
+2.Agent Registration page
+3.Agent Registration DataTable
+4.Agent list show for admin
+5.Donor Profile
+
+Date: 7 June 2022  
+
+1.blood bag storage page
+2.BB storage manage
+3.Storage overview show in the user dashboard
+4.page refresh
