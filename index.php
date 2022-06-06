@@ -45,38 +45,44 @@ include('includes/config.php');
    
     <!-- Page Content -->
     <div class="container">
-
-        <h1 class="my-4">Welcome to Blood Berry</h1>
-
+		<div class="alert alert-info my-4 text-center text-uppercase alert-dismissible">
+			<button type="button" class="close" data-dismiss="alert">&times;</button>
+				<strong>Welcome!</strong> To Blood Berry.
+		</div>
+		
+	
         <!-- Marketing Icons Section -->
-        <div class="row">
+		
+        <div class="row my-5">
             <div class="col-lg-4 mb-4">
                 <div class="card">
-                    <h4 class="card-header">The need for blood</h4>
-                   
-                        <p class="card-text" style="padding-left:2%">You could search a specific blood that need for your patients.
-						if you need any help contact with us direct through this website by contact us option. </p>
+						<button type="button" class="btn btn-outline-danger  card-header">The Need For Blood!</button>
+							<!-- <h4 class="card-header"></h4>-->
+							<p class="card-text  mt-3" style="padding-left:2%">You could search a specific blood that need for your patients.
+								if you need any help contact with us direct through this website by contact us option.
+							</p>
                 </div>
             </div>
             <div class="col-lg-4 mb-4">
                 <div class="card">
-                    <h4 class="card-header">Blood Tips for donor</h4>
-                   
-                        <p class="card-text" style="padding-left:2%">It's always a good idea to be fully hydrated before giving blood. 
-						We recommend you drink at least three glasses of water in the three hours before donation and also have another 500ml drink of water while you wait. 
-						This might seem like a lot, but research has shown the more hydrated you are, the less likely you are to feel faint during and after your donation. </p>
+					<button type="button" class="btn btn-outline-danger  card-header">Blood Tips For Donor</button>
+						<p class="card-text  mt-3" style="padding-left:2%">It's always a good idea to be fully hydrated before giving blood. 
+							We recommend you drink at least three glasses of water in the three hours before donation and also have another 500ml drink of water while you wait. 
+							This might seem like a lot, but research has shown the more hydrated you are, the less likely you are to feel faint during and after your donation.
+						</p>
                 </div>
             </div>
             <div class="col-lg-4 mb-4">
                 <div class="card">
-                    <h4 class="card-header">Who you could Help</h4>
-                   
-                        <p class="card-text" style="padding-left:2%"> Blood is essential to help patients survive surgeries, cancer treatment, chronic illnesses, and traumatic injuries
-						. This lifesaving care starts with one person making a generous donation.
-						The need for blood is constant. But only about 3% of age-eligible people donate blood yearly </p>
+					<button type="button" class="btn btn-outline-danger card-header">Who You Could Help!</button>
+						<p class="card-text mt-3" style="padding-left:2%"> Blood is essential to help patients survive surgeries, cancer treatment, chronic illnesses, and traumatic injuries
+							. This lifesaving care starts with one person making a generous donation.
+							The need for blood is constant. But only about 3% of age-eligible people donate blood yearly
+						</p>
                 </div>
             </div>
         </div>
+		</div>
         <!-- /.row -->
 
         <!-- Portfolio Section -->
@@ -98,7 +104,7 @@ if($query->rowCount() > 0)
 
 					<div class="col-lg-4 col-sm-6 portfolio-item">
 						<div class="card h-100">
-							<a href="#"><img class="card-img-top img-fluid" src="images/<?php echo htmlentities($result->Profile);?>" alt="" ></a>
+							<a href="#"><img class="card-img-top img-fluid rounded-circle style="width:50px height:60px" src="images/<?php echo htmlentities($result->Profile);?>" alt="" ></a>
 							<div class="card-block">
 								<h4 class="card-title"><a href="#"><?php echo htmlentities($result->FullName);?></a></h4>
 										<p class="card-text"><b>Email Address :</b> <?php echo htmlentities($result->EmailId);?></p>
