@@ -17,7 +17,7 @@ $query -> bindParam(':status',$status, PDO::PARAM_STR);
 $query-> bindParam(':eid',$eid, PDO::PARAM_STR);
 $query -> execute();
 
-$msg="Booking Successfully Cancelled";
+$msg=" Successfully Hide Donor";
 }
 
 
@@ -32,7 +32,7 @@ $query -> bindParam(':status',$status, PDO::PARAM_STR);
 $query-> bindParam(':aeid',$aeid, PDO::PARAM_STR);
 $query -> execute();
 
-$msg="Booking Successfully Confirmed";
+$msg="Successfully Public Donor";
 }
 if(isset($_REQUEST['del']))
 	{
@@ -42,7 +42,7 @@ $query = $dbh->prepare($sql);
 $query-> bindParam(':did',$did, PDO::PARAM_STR);
 $query -> execute();
 
-$msg="Record deleted Successfully ";
+$msg="Membership Canceled Successfully ";
 }
 
  ?>
@@ -90,6 +90,7 @@ $msg="Record deleted Successfully ";
 	<link rel="stylesheet" href="css/awesome-bootstrap-checkbox.css">
 	<!-- Admin Stye -->
 	<link rel="stylesheet" href="css/style.css">
+	
   <style>
 		.errorWrap {
     padding: 10px;
@@ -131,7 +132,7 @@ $msg="Record deleted Successfully ";
 							<?php if($error){?><div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php } 
 				else if($msg){?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>
 <a class= "btn btn-muted text-success" href="download-records.php" style=" font-size:16px;">Download Donor List</a>
-								<table id="zctb" class="display table table-striped table-bordered table-hover" cellspacing="0" width="100%">
+								<table id="zctb" class="display table table-striped table-bordered table-hover"style=" font-size:12px;" cellspacing="0" width="100%">
 									<thead>
 										<tr>
 										<th>SL</th>
@@ -142,24 +143,25 @@ $msg="Record deleted Successfully ";
 											<th>Blood Group</th>
 											<th>Mobile No</th>											
 											<th>Email</th>
-											
 											<th>District</th>
-											<th>About Him</th>											
+											<th>About Donor</th>
+											<th  >...</th>											
 									</tr>
 									</thead>
 									<tfoot>
 										<tr>
-										<th>SL</th>
-										<th>Profile</th>
-										<th>Name</th>
-										<th>Gender</th>
+											<th>SL</th>
+											<th>Profile</th>
+											<th>Name</th>
+											<th>Gender</th>
 											<th>Age</th>											
 											<th>Blood Group</th>
 											<th>Mobile No</th>											
-											<th>Email</th>
-											
+											<th>Email</th>											
 											<th>District</th>
-											<th>About Him </th>										
+											<th>About Donor </th>
+											<th  >...</th>											
+															
 										</tr>
 									</tfoot>
 									<tbody>
@@ -175,20 +177,15 @@ foreach($results as $result)
 {				?>	
 										<tr>
 											<td><?php echo htmlentities($cnt);?></td>
-											
 											<td><img style="width:50px ;" style="height: 40px" src="../images/<?php echo htmlentities($result->Profile);?>"></td>
 											<td><?php echo htmlentities($result->FullName);?></td>
 											<td><?php echo htmlentities($result->Gender);?></td>
 											<td><?php echo htmlentities($result->Age);?></td>
 											<td><?php echo htmlentities($result->BloodGroup);?></td>
 											<td><?php echo htmlentities($result->MobileNumber);?></td>
-											
 											<td><?php echo htmlentities($result->EmailId);?></td>
-											
 											<td><?php echo htmlentities($result->Address);?></td>
 											<td><?php echo htmlentities($result->Message);?></td>
-										
-										
 										<td>
 <?php if($result->status==1)
 {?>
@@ -231,6 +228,8 @@ foreach($results as $result)
 	<script src="js/fileinput.js"></script>
 	<script src="js/chartData.js"></script>
 	<script src="js/main.js"></script>
+	
+	
 </body>
 </html>
 <?php } ?>

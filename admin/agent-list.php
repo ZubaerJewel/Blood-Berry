@@ -112,16 +112,13 @@ $msg="Record deleted Successfully ";
 											<th>Name</th>
 											<th>Gender</th>
 											<th>Age</th>
-											
 											<th>Blood Group</th>
 											<th>Org. Name</th>
 											<th>Org. Contact</th>
-											
 											<th>Org. Email</th>
-											
 											<th>District</th>
 											<th>About The Organization</th>
-											
+											<th  class ="text-light">Action</th>
 										</tr>
 									</thead>
 									<tfoot>
@@ -130,16 +127,13 @@ $msg="Record deleted Successfully ";
 										<th>Name</th>
 										<th>Org. Name</th>
 										<th>Gender</th>
-											<th>Age</th>
-											
-											<th>Blood Group</th>
-											<th>Org. Contact No</th>
-											
-											<th>Org. Email</th>
-											
-											<th>District</th>
-											<th>About The Organization</th>
-										
+										<th>Age</th>
+										<th>Blood Group</th>
+										<th>Org. Contact No</th>
+										<th>Org. Email</th>
+										<th>District</th>
+										<th>About The Organization</th>
+										<th  class ="text-light">Action</th>
 										</tr>
 									</tfoot>
 									<tbody>

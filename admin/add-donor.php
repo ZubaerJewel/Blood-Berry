@@ -17,7 +17,7 @@ $mobile=$_POST['mobileno'];
 			$profile_name = $profile['name'];
 			$profile_tmp_name = $profile['tmp_name'];
 			
-			$location = "images/";
+			$location = "../images/";
 			move_uploaded_file($profile_tmp_name,$location.$profile_name);
 			
 			//profile picture  end

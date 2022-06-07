@@ -18,9 +18,9 @@
 				<li><a href="add-agent.php"><i class="fa fa-edit text-white"></i> Add Agent</a></li>
 				<li><a href="agent-list.php"><i class="fa fa-users text-white" ></i> Agent List</a></li>
 
-				<li><a href="manage-conactusquery.php"><i class="fa fa-desktop text-white"></i> Manage Conatctus Query</a></li>
+				<li><a href="manage-conactusquery.php"><i class="fa fa-desktop text-white"></i> Messages</a></li>
 			<li><a href="manage-pages.php"><i class="fa fa-files-o text-white"></i> Manage Pages</a></li>
-			<li><a href="update-contactinfo.php"><i class="fa fa-files-o text-white"></i> Update Contact Info</a></li>
+			<li><a href="update-contactinfo.php"><i class="fa fa-files-o text-white"></i> Update Contact</a></li>
 
 
 			</ul>
