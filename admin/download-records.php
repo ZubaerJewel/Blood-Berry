@@ -12,16 +12,19 @@ if(strlen($_SESSION['alogin'])==0)
 <table border="1">
 									<thead>
 										<tr>
-										<th>#</th>
+										<th>SL</th>
+										
 											<th>Name</th>
-											<th>Mobile No</th>
-											<th>Email</th>
-											<th>Age</th>
 											<th>Gender</th>
+											<th>Age</th>
+											
 											<th>Blood Group</th>
-											<th>address</th>
-											<th>Message </th>
-											<th>posting date </th>
+											<th>Contact Number</th>
+											<th>Email Address</th>
+											
+											<th>District</th>
+											<th>About Him </th>
+											
 										</tr>
 									</thead>
 
@@ -40,15 +43,15 @@ foreach($results as $result)
 echo '  
 <tr>  
 <td>'.$cnt.'</td> 
-<td>'.$complainNumber= $result->FullName.'</td> 
-<td>'.	$MobileNumber= $result->MobileNumber.'</td> 
-<td>'.$EmailId= $result->EmailId.'</td> 
-<td>'.$Gender= $result->Gender.'</td> 
-<td>'.$Age= $result->Age.'</td> 
- <td>'.$BloodGroup=$result->BloodGroup.'</td>	
-  <td>'.$BloodGroup=$result->Address.'</td>	 
-   <td>'.$BloodGroup=$result->Message.'</td>	
-  <td>'.$BloodGroup=$result->PostingDate.'</td>	 					
+	
+	<td>'.$complainNumber= $result->FullName.'</td> 
+	<td>'.$Gender= $result->Gender.'</td> 
+	<td>'.$Age= $result->Age.'</td> 
+	<td>'.$BloodGroup=$result->BloodGroup.'</td>
+	<td>'.	$MobileNumber= $result->MobileNumber.'</td> 
+	<td>'.$EmailId= $result->EmailId.'</td> 
+	<td>'.$BloodGroup=$result->Address.'</td>	 
+	<td>'.$BloodGroup=$result->Message.'</td> 					
 </tr>  
 ';
 header("Content-type: application/octet-stream");

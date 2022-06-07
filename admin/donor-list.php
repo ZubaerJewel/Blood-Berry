@@ -122,7 +122,7 @@ $msg="Record deleted Successfully ";
 				<div class="row">
 					<div class="col-md-12">
 
-						<h2 class="page-title">Donors List</h2>
+						<h2 class="btn page-title text-info" style="font-size: 26px">Donors List</h2>
 
 						<!-- Zero Configuration Table -->
 						<div class="panel panel-default">
@@ -130,36 +130,36 @@ $msg="Record deleted Successfully ";
 							<div class="panel-body">
 							<?php if($error){?><div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php } 
 				else if($msg){?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>
-				<a href="download-records.php" style="color:red; font-size:16px;">Download Donor List</a>
+<a class= "btn btn-muted text-success" href="download-records.php" style=" font-size:16px;">Download Donor List</a>
 								<table id="zctb" class="display table table-striped table-bordered table-hover" cellspacing="0" width="100%">
 									<thead>
 										<tr>
-										<th>#</th>
+										<th>SL</th>
+										<th>Profile</th>
 											<th>Name</th>
-											<th>Mobile No</th>
-											<th>Profile</th>
-											<th>Email</th>
-											<th>Age</th>
 											<th>Gender</th>
+											<th>Age</th>											
 											<th>Blood Group</th>
-											<th>address</th>
-											<th>Message </th>
-											<th>action </th>
-										</tr>
+											<th>Mobile No</th>											
+											<th>Email</th>
+											
+											<th>District</th>
+											<th>About Him</th>											
+									</tr>
 									</thead>
 									<tfoot>
 										<tr>
-										<th>#</th>
+										<th>SL</th>
+										<th>Profile</th>
 										<th>Name</th>
-											<th>Mobile No</th>
-											<th>Profile</th>
-											<th>Email</th>
-											<th>Age</th>
-											<th>Gender</th>
+										<th>Gender</th>
+											<th>Age</th>											
 											<th>Blood Group</th>
-											<th>address</th>
-											<th>Message </th>
-											<th>action </th>
+											<th>Mobile No</th>											
+											<th>Email</th>
+											
+											<th>District</th>
+											<th>About Him </th>										
 										</tr>
 									</tfoot>
 									<tbody>
@@ -175,14 +175,16 @@ foreach($results as $result)
 {				?>	
 										<tr>
 											<td><?php echo htmlentities($cnt);?></td>
-											<td><?php echo htmlentities($result->FullName);?></td>
-											<td><?php echo htmlentities($result->MobileNumber);?></td>
 											
 											<td><img style="width:50px ;" style="height: 40px" src="../images/<?php echo htmlentities($result->Profile);?>"></td>
-											<td><?php echo htmlentities($result->EmailId);?></td>
+											<td><?php echo htmlentities($result->FullName);?></td>
 											<td><?php echo htmlentities($result->Gender);?></td>
 											<td><?php echo htmlentities($result->Age);?></td>
 											<td><?php echo htmlentities($result->BloodGroup);?></td>
+											<td><?php echo htmlentities($result->MobileNumber);?></td>
+											
+											<td><?php echo htmlentities($result->EmailId);?></td>
+											
 											<td><?php echo htmlentities($result->Address);?></td>
 											<td><?php echo htmlentities($result->Message);?></td>
 										
@@ -190,13 +192,13 @@ foreach($results as $result)
 										<td>
 <?php if($result->status==1)
 {?>
-<a href="donor-list.php?hidden=<?php echo htmlentities($result->id);?>" onclick="return confirm('Do you really want to hiidden this detail')"> Make Hidden</a> 
+<a class=" text-success" href="donor-list.php?hidden=<?php echo htmlentities($result->id);?>" onclick="return confirm('Do you really want to hiidden this detail')"> Available</a> 
 <?php } else {?>
 
-<a href="donor-list.php?public=<?php echo htmlentities($result->id);?>" onclick="return confirm('Do you really want to Public this detail')"> Make Public</a>
+<a class="text-muted" href="donor-list.php?public=<?php echo htmlentities($result->id);?>" onclick="return confirm('Do you really want to Public this detail')"> Unavailable</a>
 
 <?php } ?>
-<a href="donor-list.php?del=<?php echo htmlentities($result->id);?>" onclick="return confirm('Do you really want to delete this record')"> Delete</a>
+<a class=" text-danger " href="donor-list.php?del=<?php echo htmlentities($result->id);?>" onclick="return confirm('Do you really want to delete this record')">| Member Exclude</a>
 </td>
 
 										</tr>
