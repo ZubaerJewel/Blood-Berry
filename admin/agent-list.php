@@ -7,37 +7,11 @@ if(strlen($_SESSION['alogin'])==0)
 header('location:index.php');
 }
 else{
-if(isset($_REQUEST['hidden']))
-	{
-$eid=intval($_GET['hidden']);
-$status="0";
-$sql = "UPDATE tblblooddonars SET Status=:status WHERE  id=:eid";
-$query = $dbh->prepare($sql);
-$query -> bindParam(':status',$status, PDO::PARAM_STR);
-$query-> bindParam(':eid',$eid, PDO::PARAM_STR);
-$query -> execute();
 
-$msg="Booking Successfully Cancelled";
-}
-
-
-if(isset($_REQUEST['public']))
-	{
-$aeid=intval($_GET['public']);
-$status=1;
-
-$sql = "UPDATE tblblooddonars SET Status=:status WHERE  id=:aeid";
-$query = $dbh->prepare($sql);
-$query -> bindParam(':status',$status, PDO::PARAM_STR);
-$query-> bindParam(':aeid',$aeid, PDO::PARAM_STR);
-$query -> execute();
-
-$msg="Booking Successfully Confirmed";
-}
 if(isset($_REQUEST['del']))
 	{
 $did=intval($_GET['del']);
-$sql = "delete from tblblooddonars WHERE  id=:did";
+$sql = "delete from tbl_agent WHERE  id=:did";
 $query = $dbh->prepare($sql);
 $query-> bindParam(':did',$did, PDO::PARAM_STR);
 $query -> execute();
@@ -72,7 +46,7 @@ $msg="Record deleted Successfully ";
 	<meta name="author" content="">
 	<meta name="theme-color" content="#3e454c">
 	
-	<title>Blood Berry | Donor List  </title>
+	<title>Blood Berry | Agent List  </title>
 
 	<!-- Font awesome -->
 	<link rel="stylesheet" href="css/font-awesome.min.css">
@@ -122,49 +96,55 @@ $msg="Record deleted Successfully ";
 				<div class="row">
 					<div class="col-md-12">
 
-						<h2 class="page-title">Donors List</h2>
+						<h2 class="btn page-title text-info" style="font-size: 26px">Agents List</h2>
 
 						<!-- Zero Configuration Table -->
 						<div class="panel panel-default">
-							<div class="panel-heading">Donors Info</div>
+							<div class="panel-heading">Agent Info</div>
 							<div class="panel-body">
 							<?php if($error){?><div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php } 
-				else if($msg){?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>
-				<a href="download-records.php" style="color:red; font-size:16px;">Download Donor List</a>
+							else if($msg){?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>
+<a class="btn btn-muted text-success" href="download_agent.php" style=" font-size:16px;">Download Agent List</a>
 								<table id="zctb" class="display table table-striped table-bordered table-hover" cellspacing="0" width="100%">
 									<thead>
 										<tr>
-										<th>#</th>
+										<th>SL</th>
 											<th>Name</th>
-											<th>Mobile No</th>
-											<th>Profile</th>
-											<th>Email</th>
-											<th>Age</th>
 											<th>Gender</th>
+											<th>Age</th>
+											
 											<th>Blood Group</th>
-											<th>address</th>
-											<th>Message </th>
-											<th>action </th>
+											<th>Org. Name</th>
+											<th>Org. Contact</th>
+											
+											<th>Org. Email</th>
+											
+											<th>District</th>
+											<th>About The Organization</th>
+											
 										</tr>
 									</thead>
 									<tfoot>
 										<tr>
-										<th>#</th>
+										<th>SL</th>
 										<th>Name</th>
-											<th>Mobile No</th>
-											<th>Profile</th>
-											<th>Email</th>
+										<th>Org. Name</th>
+										<th>Gender</th>
 											<th>Age</th>
-											<th>Gender</th>
+											
 											<th>Blood Group</th>
-											<th>address</th>
-											<th>Message </th>
-											<th>action </th>
+											<th>Org. Contact No</th>
+											
+											<th>Org. Email</th>
+											
+											<th>District</th>
+											<th>About The Organization</th>
+										
 										</tr>
 									</tfoot>
 									<tbody>
 
-<?php $sql = "SELECT * from  tblblooddonars ";
+<?php $sql = "SELECT * from  tbl_agent";
 $query = $dbh -> prepare($sql);
 $query->execute();
 $results=$query->fetchAll(PDO::FETCH_OBJ);
@@ -176,28 +156,20 @@ foreach($results as $result)
 										<tr>
 											<td><?php echo htmlentities($cnt);?></td>
 											<td><?php echo htmlentities($result->FullName);?></td>
-											<td><?php echo htmlentities($result->MobileNumber);?></td>
-											
-											<td><img style="width:50px ;" style="height: 40px" src="../images/<?php echo htmlentities($result->Profile);?>"></td>
-											<td><?php echo htmlentities($result->EmailId);?></td>
-											<td><?php echo htmlentities($result->Gender);?></td>
+												<td><?php echo htmlentities($result->Gender);?></td>
 											<td><?php echo htmlentities($result->Age);?></td>
 											<td><?php echo htmlentities($result->BloodGroup);?></td>
-											<td><?php echo htmlentities($result->Address);?></td>
-											<td><?php echo htmlentities($result->Message);?></td>
+											 <td><?php echo htmlentities($result->OrganizationName);?></td>
+											<td><?php echo htmlentities($result->MobileNumber);?></td>
+											
+									        <td><?php echo htmlentities($result->EmailId);?></td>
 										
+											<td><?php echo htmlentities($result->Address);?></td>
+											<td><?php echo htmlentities($result->Message);?></td>									
 										
 										<td>
-<?php if($result->status==1)
-{?>
-<a href="donor-list.php?hidden=<?php echo htmlentities($result->id);?>" onclick="return confirm('Do you really want to hiidden this detail')"> Make Hidden</a> 
-<?php } else {?>
-
-<a href="donor-list.php?public=<?php echo htmlentities($result->id);?>" onclick="return confirm('Do you really want to Public this detail')"> Make Public</a>
-
-<?php } ?>
-<a href="donor-list.php?del=<?php echo htmlentities($result->id);?>" onclick="return confirm('Do you really want to delete this record')"> Delete</a>
-</td>
+											<a class= "text-danger" href="agent-list.php?del=<?php echo htmlentities($result->id);?>" onclick="return confirm('Do you really want to delete this record')"> Exclude</a>
+										</td>
 
 										</tr>
 										<?php $cnt=$cnt+1; }} ?>
