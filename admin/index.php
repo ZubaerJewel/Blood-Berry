@@ -17,7 +17,7 @@ $_SESSION['alogin']=$_POST['username'];
 echo "<script type='text/javascript'> document.location = 'dashboard.php'; </script>";
 } else{
   
-  echo "<script>alert('Invalid Details');</script>";
+  echo "<script>alert('Invalid Username or Password.Please Try Again!!!');</script>";
 
 }
 
@@ -47,12 +47,15 @@ echo "<script type='text/javascript'> document.location = 'dashboard.php'; </scr
 
 <body>
 	
+	<!--Logo Design-->
+	<a class="logo"  href = "index.php"><img style="width:15% ;"  src ="../images/blood_berry1.PNG"></a> 
+	
 	<div class="login-page bk-img" style="background-image: url(img/AdminBanner.PNG);">
 		<div class="form-content">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-6 col-md-offset-3">
-						<h1 class="text-center text-bold text-light mt-4x">Blood Berry Admin Control Login</h1>
+						<h1 class="text-center text-bold text-light mt-4x">Blood Berry Admin Login</h1>
 						<div class="well row pt-2x pb-3x bk-light">
 							<div class="col-md-8 col-md-offset-2">
 								<form method="post">
@@ -66,6 +69,7 @@ echo "<script type='text/javascript'> document.location = 'dashboard.php'; </scr
 								
 
 									<button class="btn btn-primary btn-block" name="login" type="submit">LOGIN</button>
+									<a class="text-warning p-3 " href="../index.php"><br>Cancel</a>
 
 								</form>
 							</div>

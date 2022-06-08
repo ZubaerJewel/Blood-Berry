@@ -1,9 +1,9 @@
 Date: 6 June 2022          [Remark]
 
 1.user Dashboard ,header,Footer Design  [Completed]
-2.Agent Registration page
-3.Agent Registration DataTable
-4.Agent list show for admin
+2.Agent Registration page		[Completed]
+3.Agent Registration DataTable		[Completed]
+4.Agent list show for admin		[Completed]
 5.Donor Profile
 
 Date: 7 June 2022  
@@ -12,3 +12,13 @@ Date: 7 June 2022
 2.BB storage manage
 3.Storage overview show in the user dashboard
 4.page refresh
+5. Admin->Manage pages->NabTAb->Update Post and Publish New Post.
+6. Agent List Download Page    		[Completed]
+
+
+8 june 2022
+1.
+2.
+3.
+4.
+5.

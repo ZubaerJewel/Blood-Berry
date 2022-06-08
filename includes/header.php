@@ -40,7 +40,7 @@
                         <a   class="btn-danger nav-link text-white" href="search-donor.php">Search</a>
                     </li>
 					<li class="nav-item">
-                        <a   class="btn-danger nav-link text-white" href="become-donar.php">Donor</a>
+                        <a   class="btn-danger nav-link text-white" href="donor-public-list.php">Donor</a>
                     </li>
                     
   <div class="btn-group">

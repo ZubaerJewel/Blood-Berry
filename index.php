@@ -51,7 +51,7 @@ include('includes/config.php');
 	
         <!-- Marketing Icons Section -->
 		
-        <div class="container-fluid row my-5">
+        <div class="container-fluid row p-5">
             <div class="col-lg-4 mb-4">
                 <div class="card">
 						<button type="button" class="btn btn-outline-danger  card-header">The Need For Blood!</button>
@@ -115,7 +115,7 @@ if($query->rowCount() > 0)
 							</div>
 						</div>
 					</div>
-
+
 					<?php }} ?>
 				  
 		 
