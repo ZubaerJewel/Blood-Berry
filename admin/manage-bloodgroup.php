@@ -75,15 +75,13 @@ $msg="Data Deleted successfully";
 <body>
 	<?php include('includes/header.php');?>
 
-	<div class="ts-main-content">
-		<?php include('includes/leftbar.php');?>
+			<div class="container">
 		<div class="content-wrapper">
-			<div class="container-fluid">
 
 				<div class="row">
 					<div class="col-md-12">
 
-						<h2 class="page-title">Manage Blood Groups</h2>
+						<h2 class="btn page-title text-info" style="font-size: 26px">Manage Blood</h2>
 
 						<!-- Zero Configuration Table -->
 						<div class="panel panel-default">
@@ -145,7 +143,7 @@ foreach($results as $result)
 
 			</div>
 		</div>
-	</div>
+
 
 	<!-- Loading Scripts -->
 	<script src="js/jquery.min.js"></script>

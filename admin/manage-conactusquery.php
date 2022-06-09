@@ -88,11 +88,9 @@ $msg="Record deleted Successfully ";
 <body>
 	<?php include('includes/header.php');?>
 
-	<div class="ts-main-content">
-		<?php include('includes/leftbar.php');?>
-		<div class="content-wrapper">
-			<div class="container-fluid">
+			<div class="container">
 
+		<div class="content-wrapper">
 				<div class="row">
 					<div class="col-md-12">
 
@@ -173,7 +171,7 @@ foreach($results as $result)
 				</div>
 
 			</div>
-		</div>
+		
 	</div>
 
 	<!-- Loading Scripts -->

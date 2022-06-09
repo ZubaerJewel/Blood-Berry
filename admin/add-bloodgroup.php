@@ -81,15 +81,14 @@ $error="Something went wrong. Please try again";
 
 <body>
 	<?php include('includes/header.php');?>
-	<div class="ts-main-content">
-	<?php include('includes/leftbar.php');?>
+	<div class="container">
 		<div class="content-wrapper">
-			<div class="container-fluid">
+			
 
 				<div class="row">
 					<div class="col-md-12">
 					
-						<h2 class="page-title">Add Blood Group </h2>
+						<h2 class="btn page-title text-info" style="font-size: 26px">Add Blood Group </h2>
 
 						<div class="row">
 							<div class="col-md-10">
@@ -134,7 +133,7 @@ $error="Something went wrong. Please try again";
 				
 			
 			</div>
-		</div>
+	
 	</div>
 
 	<!-- Loading Scripts -->

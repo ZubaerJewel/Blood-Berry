@@ -99,15 +99,14 @@ return true;
 
 <body>
 	<?php include('includes/header.php');?>
-	<div class="ts-main-content">
-	<?php include('includes/leftbar.php');?>
+	<div class="container">
 		<div class="content-wrapper">
-			<div class="container-fluid">
+			
 
 				<div class="row">
 					<div class="col-md-12">
 					
-						<h2 class="page-title">Change Password</h2>
+						<h2 class="btn page-title text-info" style="font-size: 26px">Change Password</h2>
 
 						<div class="row">
 							<div class="col-md-10">
@@ -168,8 +167,7 @@ return true;
 			
 			</div>
 		</div>
-	</div>
-
+	
 	<!-- Loading Scripts -->
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap-select.min.js"></script>

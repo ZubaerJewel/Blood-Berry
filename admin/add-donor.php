@@ -134,7 +134,7 @@ function isNumberKey(evt)
 				<div class="row">
 					<div class="col-md-12">
 					
-						<h2 class="page-title">Add Donor</h2>
+						<h2 class="btn page-title text-info" style="font-size: 26px">Add Donor</h2>
 
 						<div class="row">
 							<div class="col-md-12">

@@ -115,10 +115,9 @@ $msg="Membership Canceled Successfully ";
 <body>
 	<?php include('includes/header.php');?>
 
-	<div class="ts-main-content">
-		<?php include('includes/leftbar.php');?>
+	
+			<div class="container">
 		<div class="content-wrapper">
-			<div class="container-fluid">
 
 				<div class="row">
 					<div class="col-md-12">
@@ -132,7 +131,7 @@ $msg="Membership Canceled Successfully ";
 							<?php if($error){?><div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php } 
 				else if($msg){?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>
 <a class= "btn btn-muted text-success" href="download-records.php" style=" font-size:16px;">Download Donor List</a>
-								<table id="zctb" class="display table table-striped table-bordered table-hover"style=" font-size:12px;" cellspacing="0" width="100%">
+								<table id="zctb" class="display table table-striped table-bordered table-hover  table-responsive"style=" font-size:12px;" cellspacing="0" width="100%">
 									<thead>
 										<tr>
 										<th>SL</th>
@@ -215,7 +214,7 @@ foreach($results as $result)
 				</div>
 
 			</div>
-		</div>
+	
 	</div>
 
 	<!-- Loading Scripts -->

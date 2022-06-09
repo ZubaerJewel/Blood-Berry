@@ -20,21 +20,7 @@ $msg="Record deleted Successfully ";
 }
 
  ?>
- <!--copy images files start-->
- <?php 
- /*
-		$bb_dir="C:\xampp\htdocs\blood_berry\images";
-		$admin_dir ="C:\xampp\htdocs\blood_berry\admin";
-		$files = clean_scandir($bb_dir);
-		for($i=0;$i<count($files);$i++)
-		{
-			if(!file_exists("$admin_dir/$files[$i]"))
-			{
-				copy("bb_dir/$files[$i]","$admin_dir/$files[$i]");
-			}
-		}*/
- ?>
- <!--copy images files end -->
+
 <!doctype html>
 <html lang="en" class="no-js">
 
@@ -88,10 +74,9 @@ $msg="Record deleted Successfully ";
 <body>
 	<?php include('includes/header.php');?>
 
-	<div class="ts-main-content">
-		<?php include('includes/leftbar.php');?>
+		<div class="container">
 		<div class="content-wrapper">
-			<div class="container-fluid">
+		
 
 				<div class="row">
 					<div class="col-md-12">
@@ -183,7 +168,7 @@ foreach($results as $result)
 
 			</div>
 		</div>
-	</div>
+	
 
 	<!-- Loading Scripts -->
 	<script src="js/jquery.min.js"></script>

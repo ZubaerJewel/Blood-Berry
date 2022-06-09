@@ -63,7 +63,7 @@ include('includes/config.php');
 						<!-- Zero Configuration Table -->
 							<?php if($error){?><div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php } 
 							else if($msg){?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>
-				<table id="zcbt" class="display table table-striped table-bordered table-hover dt-responsive nowrap "style=" font-size:12px;"  width="100%">
+				<table id="zcbt" class="display table-md table table-striped table-bordered table-hover dt-responsive nowrap "style=" font-size:12px;"  width="100%">
 									<thead>
 										<tr>
 										<th>SL</th>

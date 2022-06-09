@@ -42,15 +42,14 @@ else{
 <body>
 <?php include('includes/header.php');?>
 
-	<div class="ts-main-content">
-<?php include('includes/leftbar.php');?>
+	<div class="container">
 		<div class="content-wrapper">
-			<div class="container-fluid">
+		
 
 				<div class="row">
 					<div class="col-md-12">
 
-						<h2 class="page-title">Dashboard</h2>
+						<h2 class="btn page-title text-info" style="font-size: 26px" >Dashboard</h2>
 						
 						<div class="row">
 							<div class="col-md-12">
@@ -120,7 +119,7 @@ $query=$query6->rowCount();
 
 
 
-
+<!-- Some java Scripts code delete from here -->
 
 
 
@@ -128,7 +127,7 @@ $query=$query6->rowCount();
 
 
 			</div>
-		</div>
+		
 	</div>
 
 	<!-- Loading Scripts -->
@@ -142,29 +141,7 @@ $query=$query6->rowCount();
 	<script src="js/chartData.js"></script>
 	<script src="js/main.js"></script>
 	
-	<script>
-		
-	window.onload = function(){
-    
-		// Line chart from swirlData for dashReport
-		var ctx = document.getElementById("dashReport").getContext("2d");
-		window.myLine = new Chart(ctx).Line(swirlData, {
-			responsive: true,
-			scaleShowVerticalLines: false,
-			scaleBeginAtZero : true,
-			multiTooltipTemplate: "<%if (label){%><%=label%>: <%}%><%= value %>",
-		}); 
-		
-		// Pie Chart from doughutData
-		var doctx = document.getElementById("chart-area3").getContext("2d");
-		window.myDoughnut = new Chart(doctx).Pie(doughnutData, {responsive : true});
 
-		// Dougnut Chart from doughnutData
-		var doctx = document.getElementById("chart-area4").getContext("2d");
-		window.myDoughnut = new Chart(doctx).Doughnut(doughnutData, {responsive : true});
-
-	}
-	</script>
 </body>
 </html>
 <?php } ?>

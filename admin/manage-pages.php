@@ -111,15 +111,14 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
 
 <body>
 	<?php include('includes/header.php');?>
-	<div class="ts-main-content">
-	<?php include('includes/leftbar.php');?>
+
+			<div class="container">
 		<div class="content-wrapper">
-			<div class="container-fluid">
 
 				<div class="row">
 					<div class="col-md-12">
 					
-						<h2 class="page-title">Manage Pages </h2>
+						<h2 class="btn page-title text-info" style="font-size: 26px">Manage Pages </h2>
 
 						<div class="row">
 							<div class="col-md-10">
@@ -224,7 +223,6 @@ echo htmlentities($result->detail);
 			
 			</div>
 		</div>
-	</div>
 
 	<!-- Loading Scripts -->
 	<script src="js/jquery.min.js"></script>

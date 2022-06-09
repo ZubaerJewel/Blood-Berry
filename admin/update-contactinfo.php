@@ -34,7 +34,7 @@ $msg="Info Updateed successfully";
 	<meta name="author" content="">
 	<meta name="theme-color" content="#3e454c">
 	
-	<title>BBDMS | Admin Update Contact info</title>
+	<title>Blood Berry | Admin Update Contact info</title>
 
 	<!-- Font awesome -->
 	<link rel="stylesheet" href="css/font-awesome.min.css">
@@ -76,15 +76,13 @@ $msg="Info Updateed successfully";
 
 <body>
 	<?php include('includes/header.php');?>
-	<div class="ts-main-content">
-	<?php include('includes/leftbar.php');?>
+			<div class="container">
 		<div class="content-wrapper">
-			<div class="container-fluid">
 
 				<div class="row">
 					<div class="col-md-12">
 					
-						<h2 class="page-title">Update Contact Info</h2>
+						<h2 class="btn page-title text-info" style="font-size: 26px">Update Contact Info</h2>
 
 						<div class="row">
 							<div class="col-md-10">
@@ -152,7 +150,7 @@ foreach($results as $result)
 				
 			
 			</div>
-		</div>
+	
 	</div>
 
 	<!-- Loading Scripts -->
