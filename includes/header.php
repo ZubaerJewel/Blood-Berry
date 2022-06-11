@@ -42,6 +42,9 @@
 					<li class="nav-item">
                         <a   class="btn-danger nav-link text-white" href="donor-public-list.php">Donor</a>
                     </li>
+					<li class="nav-item">
+                        <a   class="btn-danger nav-link text-white" href="blood-storage.php">Blood</a>
+                    </li>
                     
   <div class="btn-group">
     <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown">

@@ -8,9 +8,9 @@ Date: 6 June 2022          [Remark]
 
 Date: 7 June 2022  
 
-1.blood bag storage page
-2.BB storage manage
-3.Storage overview show in the user dashboard
+1.blood bag storage page Admin 			[Completed]
+2.BB storage manage Admin			[Completed]
+3.Storage overview show in the user dashboard	[Completed]
 4.page refresh
 5. Admin->Manage pages->NabTAb->Update Post and Publish New Post.
 6. Agent List Download Page    		[Completed]
@@ -22,3 +22,15 @@ Date: 7 June 2022
 3.
 4.
 5.
+11 june 2022
+
+admin:
+1.storage blood for public view			[Completed]
+2.[Request for blood an agent]			[Completed]
+3. increase or decrease Blood stock on admin	[Completed] 
+
+12 June 2022
+
+1.Blood Request Accept or Decline Message and email send to organization  from Blood Berry...***
+2. Added No.ofBloodBag Column in Agent Table.
+3. Increase No.ofBloodBag when Blood Berry accepted blood request.

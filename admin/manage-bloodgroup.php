@@ -7,17 +7,29 @@ if(strlen($_SESSION['alogin'])==0)
 header('location:index.php');
 }
 else{
-if(isset($_GET['del']))
+if(isset($_GET['increase']))
 {
-$id=$_GET['del'];
-$sql = "delete from tblbloodgroup  WHERE id=:id";
+$id=$_GET['increase'];
+$sql = "update tblbloodgroup set  StorageNumber=  StorageNumber + 1 WHERE id=:id";
 $query = $dbh->prepare($sql);
 $query -> bindParam(':id',$id, PDO::PARAM_STR);
 $query -> execute();
-$msg="Data Deleted successfully";
+$msg="Increased Blood Bag successfully";
+
+ }
+
 
 }
+if(isset($_GET['decrease']))
+{
+$id=$_GET['decrease'];
+$sql = "update tblbloodgroup set  StorageNumber=  StorageNumber - 1 WHERE id=:id";
+$query = $dbh->prepare($sql);
+$query -> bindParam(':id',$id, PDO::PARAM_STR);
+$query -> execute();
+$msg="Decreased Blood Bag successfully";
 
+}
 
 
  ?>
@@ -33,7 +45,7 @@ $msg="Data Deleted successfully";
 	<meta name="author" content="">
 	<meta name="theme-color" content="#3e454c">
 	
-	<title>Blood Berry |Admin Manage Blood groups   </title>
+	<title>Blood Berry |Admin Blood  Manage </title>
 
 	<!-- Font awesome -->
 	<link rel="stylesheet" href="css/font-awesome.min.css">
@@ -85,33 +97,34 @@ $msg="Data Deleted successfully";
 
 						<!-- Zero Configuration Table -->
 						<div class="panel panel-default">
-							<div class="panel-heading">Listed  Blood Groups</div>
+							<div class="panel-heading">Stocked  Blood</div>
 							<div class="panel-body">
 							<?php if($error){?><div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php } 
 				else if($msg){?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>
 								<table id="zctb" class="display table table-striped table-bordered table-hover" cellspacing="0" width="100%">
 									<thead>
 										<tr>
-										<th>#</th>
-												<th>Blood Groups/th>
-											<th>Creation Date</th>
+										<th>SL</th>
+												<th>Blood Name/th>
+											<th>Storage Bag</th>
 										
 										
-											<th>Action</th>
+											<th>...</th>
 										</tr>
 									</thead>
 									<tfoot>
 										<tr>
-										<th>#</th>
-											<th>Brand Name</th>
-											<th>Creation Date</th><th>Action</th>
+										<th>SL</th>
+											<th>Blood Name</th>
+											<th>Storage Bag</th>
+											<th>...</th>
 										</tr>
 										</tr>
 									</tfoot>
 									<tbody>
 
 <?php $sql = "SELECT * from  tblbloodgroup ";
-$query = $dbh -> prepare($sql);
+$query = $dbh -> prepare($sql); 
 $query->execute();
 $results=$query->fetchAll(PDO::FETCH_OBJ);
 $cnt=1;
@@ -122,9 +135,13 @@ foreach($results as $result)
 										<tr>
 											<td><?php echo htmlentities($cnt);?></td>
 											<td><?php echo htmlentities($result->BloodGroup);?></td>
-											<td><?php echo htmlentities($result->PostingDate);?></td>
+											<td><?php echo htmlentities($result->StorageNumber);?></td>
 <td>
-<a href="manage-bloodgroup.php?del=<?php echo $result->id;?>" onclick="return confirm('Do you want to delete');"><i class="fa fa-close"></i></a></td>
+<a class =  "text-success" href="manage-bloodgroup.php?increase=<?php echo $result->id;?>" onclick="return confirm('Do you want to increase blood bag');">Increase</a>
+
+<a class =  "text-Danger" href="manage-bloodgroup.php?decrease=<?php echo $result->id;?>" onclick="return confirm('Do you want to increase blood bag');">|| Decrease</a>
+</td>
+
 										</tr>
 										<?php $cnt=$cnt+1; }} ?>
 										
@@ -157,4 +174,4 @@ foreach($results as $result)
 	<script src="js/main.js"></script>
 </body>
 </html>
-<?php } ?>
+

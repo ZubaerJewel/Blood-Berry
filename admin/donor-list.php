@@ -47,20 +47,7 @@ $msg="Membership Canceled Successfully ";
 
  ?>
  <!--copy images files start-->
- <?php 
- /*
-		$bb_dir="C:\xampp\htdocs\blood_berry\images";
-		$admin_dir ="C:\xampp\htdocs\blood_berry\admin";
-		$files = clean_scandir($bb_dir);
-		for($i=0;$i<count($files);$i++)
-		{
-			if(!file_exists("$admin_dir/$files[$i]"))
-			{
-				copy("bb_dir/$files[$i]","$admin_dir/$files[$i]");
-			}
-		}*/
- ?>
- <!--copy images files end -->
+
 <!doctype html>
 <html lang="en" class="no-js">
 

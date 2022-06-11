@@ -36,7 +36,7 @@
 			
 								<li><a class="btn" style="font-size:20px"  href="#"><i class="fa fa-files-o  text-white"></i> Blood</a>
 					<ul>
-								<li><a class="btn" style="font-size:20px" href="add-bloodgroup.php">Add Blood</a></li>
+								<li><a class="btn" style="font-size:20px" href="blood-request.php">Blood Request</a></li>
 								<li><a class="btn" style="font-size:20px"  href="manage-bloodgroup.php">Manage Blood</a></li>
 					</ul>
 								</li>

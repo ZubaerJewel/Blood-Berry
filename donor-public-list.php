@@ -15,6 +15,7 @@ include('includes/config.php');
 	<meta name="author" content="">
 	<meta name="theme-color" content="#3e454c">	
 	<title>Blood Berry | Public Donor List  </title>
+	
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/modern-business.css" rel="stylesheet"> 
     
