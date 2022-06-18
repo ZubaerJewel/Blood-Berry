@@ -1,6 +1,6 @@
 <style>
 	.logo img{
-		width:150px;
+		width:185px;
 		height:65px;
 		float:left;
 	}
@@ -20,14 +20,14 @@
     }
 
     </style>
+     <nav class=" navbar   navbar-toggleable-md text-right   navbar-inverse fixed-top">
+<div class="row">
+<div class="col-xs-2 text-left">
+		<button class="navbar-toggler navbar-toggler-right btn-md btn-success " type="button" data-toggle="collapse" data-target="#navbarExample" >
+            <i class="fa fa-bars fa-4x" aria-hidden="true"></i>
+	    </button>
 
- <nav class=" navbar   navbar-toggleable-md text-right   navbar-inverse fixed-top">
-
-		   <button class="navbar-toggler navbar-toggler-right btn-md btn-success " type="button" data-toggle="collapse" data-target="#navbarExample" >
-            <span ><i class="fa fa-bars fa-4x" aria-hidden="true"></i>
-</span>
-        </button>
-		<a class="logo"  href = "index.php"><img src ="../images/blood_berry1.PNG"></a> <!--Logo Design-->
+	
        <div class="collapse" id="navbarExample">
                 <ul class="ts-sidebar-menu  btn-group  ml-auto ">
 				
@@ -57,5 +57,24 @@
 
                  
                 </ul>
-            </div>
-    </nav>
+			</div>
+</div>
+
+<div class="text-center col-xs-8 " id="demo"></div>
+
+<div class="text-right col-xs-2">
+	    <a class="logo text-right"  href = "index.php"><img src ="../images/blood_berry1.PNG"></a> <!--Logo Design-->
+</div>
+</div>
+
+</nav>
+				
+
+<script>
+setInterval(myTimer, 1000);
+
+function myTimer() {
+  const d = new Date();
+  document.getElementById("demo").innerHTML = d.toLocaleTimeString();
+}
+</script>
